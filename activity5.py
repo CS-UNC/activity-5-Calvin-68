@@ -18,11 +18,6 @@ def has_no_e(word):
 print(has_no_e('allegory'))
 
 def uses_only(word, letters):
-    for letter in word:
-        if letter not in letters:
-            return False
-        else: 
-            return True
+    allowed = set(letters)
+    return all(characters in allowed for characters in word)
     
-
-
