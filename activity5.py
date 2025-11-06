@@ -8,15 +8,14 @@ def more_than_20(words_file):
             result.append(word)
     return result
             
-print (more_than_20)
+
     
 def has_no_e(word):
-    for i in word:
-        if "e" not in i:
-            return False
-        else: 
-            return True
+    item = str(word)
+    return 'e' in item.lower()
         
+
+
 def uses_only(word, letters):
     for letter in word:
         if letter not in letters:
@@ -24,8 +23,5 @@ def uses_only(word, letters):
         else: 
             return True
     
-
-print(more_than_20(words_file))
-
 
 
