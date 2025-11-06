@@ -1,11 +1,15 @@
 words_file =open('CROSSWD.txt','r')
 
 def more_than_20(words_file):
-   for words in words_file:
-        if  len(words) >= 22:
-         return (words)
+    result = []
+    for item in words_file:
+        word = item.strip('\n')
+        if len(word) > 20:
+            result.append(word)
+    return result
+            
+print (more_than_20)
     
-
 def has_no_e(word):
     for i in word:
         if "e" not in i:
@@ -22,5 +26,6 @@ def uses_only(word, letters):
     
 
 print(more_than_20(words_file))
+
 
 
