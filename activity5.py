@@ -8,16 +8,22 @@ def more_than_20(file):
         if len(word) > 20:
             result.append(word)
     return result
-
-print(more_than_20('CROSSWD.txt'))
     
 def has_no_e(word):
     item = str(word)
     return 'e' not in item.lower()
         
-print(has_no_e('allegory'))
 
 def uses_only(word, letters):
     allowed = set(letters)
     return all(characters in allowed for characters in word)
     
+def all_uses_only(file, letters):
+    result = []
+    opened_file = open(file, 'r')
+    for line in opened_file:
+        words = line.split()
+        for word in words:
+            if uses_only(word, letters):
+                result.append(word)
+    return result
